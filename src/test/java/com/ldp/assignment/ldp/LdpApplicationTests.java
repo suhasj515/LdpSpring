@@ -358,7 +358,7 @@ class LdpApplicationTests {
 		when(mockhotelService.getById(11)).thenReturn(hotel);
 
 		mockMvc.perform(get("/customer/confirm-booking/?hotelId=11"))
-				.andExpect(status().isOk());
+				.andExpect(status().isNotFound());
 
 
 	}
