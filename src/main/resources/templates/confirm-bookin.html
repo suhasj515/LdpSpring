@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Confirm booking</title>
+
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.css}"/>
+    <link th:rel="stylesheet" th:href="@{assets/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css}"/>
+    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+</head>
+<body>
+<h3 th:text="'Please select date for booking: '+${hotel.hotelName}" ></h3>
+
+<form th:action="@{/customer/booking/(hotelId=${hotel.id})}"
+      th:object="${tempCustomer}" method="POST"
+      class="form-horizontal">
+    <input type="date" th:field="*{firstName}"/>
+    <button type="submit" class="btn btn-primary">confirm booking</button>
+</form>
+
+</body>
+</html>
